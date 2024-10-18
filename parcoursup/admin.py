@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Establishment
-from .models import Formation
-from .models import Application
-from .models import Offers
+from .models import Establishment, Formation, Application, Offers
 
 admin.site.register(Establishment)
 admin.site.register(Formation)
