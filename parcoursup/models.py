@@ -2,22 +2,22 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Establishment(models.Model):
+class Establishments(models.Model):
     name = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
-    formations = models.ManyToManyField('Formation', through='Offers')
+    formation = models.ManyToManyField('Formations', through='Offers')
 
-class Formation(models.Model):
+class Formations(models.Model):
     name = models.CharField(max_length=255)
     type = models.CharField(max_length=255)
-    applications = models.ManyToManyField(User, through='Application')
+    application = models.ManyToManyField(User, through='Applications')
 
-class Application(models.Model):
-    formation = models.ForeignKey(Formation, on_delete=models.CASCADE)
+class Applications(models.Model):
+    formation = models.ForeignKey(Formations, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.CharField(max_length=255)
 
 class Offers(models.Model):
-    establishment = models.ForeignKey(Establishment, on_delete=models.CASCADE)
-    formation = models.ForeignKey(Formation, on_delete=models.CASCADE)
+    establishment = models.ForeignKey(Establishments, on_delete=models.CASCADE)
+    formation = models.ForeignKey(Formations, on_delete=models.CASCADE)
