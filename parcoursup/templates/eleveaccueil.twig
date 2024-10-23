@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        </head>
+        <body>
+        <h1>Liste des Formations</h1>
+        <ul>
+        {% for formation in Formations %}
+        <li>
+        {{ formation.title }}
+        </li>
+        {% endfor %}
+        </ul>
+        </body>
+        </html>
