@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'parcoursup/templates/index.html.twig')
+    return render(request, 'index.html.twig')
 
 # Create your views here.
