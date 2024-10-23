@@ -8,20 +8,16 @@
     {# {{ form_errors(registrationForm) }} #}
 
     {# {{ form_start(registrationForm) }} #}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
         <div class="row">
             <div class="col-sm">
-                {# {{ form_row(registrationForm.firstname) }} #}
             </div>
             <div class="col">
-                {# {{ form_row(registrationForm.lastname) }} #}
             </div>
         </div>
-        {# {{ form_row(registrationForm.email) }} #}
-        {# {{ form_row(registrationForm.plainPassword, { #}
-            {# label: 'Password' #}
-        {# }) }} #}
-        {# {{ form_row(registrationForm.agreeTerms) }} #}
 
-        <button type="submit" class="btn">Register</button>
-    {# {{ form_end(registrationForm) }} #}
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
 {% endblock %}
