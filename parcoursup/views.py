@@ -13,4 +13,10 @@ def eleveaccueil(request):
 def candidater(request):
     return render(request, 'pages/candidater.html.twig')
 
+def login(request):
+    return render(request, 'pages/login.html.twig')
+
+def register(request):
+    return render(request, 'pages/register.html.twig')
+
 # Create your views here.
