@@ -9,6 +9,8 @@ def index(request):
 
 def eleveaccueil(request):
     return render(request, 'pages/eleveaccueil.html.twig', {'Formations': Formations.objects.all()})
-    
+
+def candidater(request):
+    return render(request, 'pages/candidater.html.twig')
 
 # Create your views here.
