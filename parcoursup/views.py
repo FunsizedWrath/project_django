@@ -22,7 +22,4 @@ def login(request):
 
 def register(request):
     return render(request, 'pages/register.html.twig')
-
-def logout(request):
-    return render(request, 'pages/logout.html.twig')
 # Create your views here.
