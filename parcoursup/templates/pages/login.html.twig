@@ -3,20 +3,20 @@
 {% block title %}Log in!{% endblock %}
 
 {% block content %}
-    <form method="post">
+    <form method="post" action="{{ app_path }}">{% csrf_token %}
         {% if error %}
             {# <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div> #}
         {% endif %}
 
-        {% if app.user %}
+        {% if  user.is_authenticated %}
             <div class="alert alert-info mb-3">
-                {# You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a> #}
+                You are logged in as {{  user.is_authenticated }}, <a href="">Logout</a>
             </div>
         {% endif %}
 
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="username">Email</label>
-        <input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
+        <label for="username">Username</label>
+        <input type="username" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="username" required autofocus>
         <label for="password">Password</label>
         <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
 
