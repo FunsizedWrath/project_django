@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from parcoursup.models import Formations
+from django.contrib.auth.views import LoginView
+
+class CustomLoginView(LoginView):
+    template_name = 'pages/login.html.twig'
 
 def indexe(request):
     return render(request, 'pages/indexe.html.twig')
@@ -19,4 +23,6 @@ def login(request):
 def register(request):
     return render(request, 'pages/register.html.twig')
 
+def logout(request):
+    return render(request, 'pages/logout.html.twig')
 # Create your views here.
