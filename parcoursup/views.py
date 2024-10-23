@@ -11,4 +11,10 @@ def eleveaccueil(request):
     return render(request, 'pages/eleveaccueil.html.twig', {'Formations': Formations.objects.all()})
     
 
+def login(request):
+    return render(request, 'pages/login.html.twig')
+
+def register(request):
+    return render(request, 'pages/register.html.twig')
+
 # Create your views here.
