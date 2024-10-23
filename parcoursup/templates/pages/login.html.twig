@@ -2,15 +2,15 @@
 
 {% block title %}Log in!{% endblock %}
 
-{% block body %}
+{% block content %}
     <form method="post">
         {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {# <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div> #}
         {% endif %}
 
         {% if app.user %}
             <div class="alert alert-info mb-3">
-                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                {# You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a> #}
             </div>
         {% endif %}
 
@@ -21,7 +21,7 @@
         <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
 
         <input type="hidden" name="_csrf_token"
-               value="{{ csrf_token('authenticate') }}"
+               {# value="{{ csrf_token('authenticate') }}" #}
         >
 
         <button class="btn btn-lg btn-primary mt-3" type="submit">
