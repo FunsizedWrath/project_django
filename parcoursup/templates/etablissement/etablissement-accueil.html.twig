@@ -7,7 +7,7 @@
 			<li>
 				{{ formation.etablissement }}
 				 Formation : {{ formation.name }} de type
-				{{ formation.type }} <a href="{% url 'candidater' formation.id %}">candidater</a>
+				{{ formation.type }} <a href="{% url 'candidats' %}">Voir candidatures</a>
 
 			</li>
 		{% endfor %}

@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+	<h1>Liste des Formations</h1>
+	<ul>
+		{% for application in Applications %}
+			<li>
+				 Candidat : {{ application.user_id }}
+				<button>Accepter candidature</button>
+				<button>Refuser candidature</button>
+
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

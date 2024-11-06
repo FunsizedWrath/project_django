@@ -1,10 +1,19 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-	<h1>Candidater</h1>
-	<form method="post">
+    <h1>Postuler à la formation : {{ formation.name }}</h1>
+
+    <h2>{{ formation.name }}</h2>
+    <p><strong>Établissement :</strong> {{ formation.etablissement }}</p>
+    <p><strong>Type de formation :</strong> {{ formation.type }}</p>
+
+    <!-- Form for applying -->
+    <h3>Formulaire de Candidature</h3>
+    <form method="post" action="{% url 'submit_application' formation.id %}">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Enregistrer</button>
-        </form>
+
+
+        <button type="submit">Envoyer la candidature</button>
+    </form>
+
 {% endblock %}
